@@ -8,5 +8,4 @@ with open(str(Path(__file__).resolve().parent)+"/images/real.jpg", "rb") as img_
 
 
 r = requests.post('http://0.0.0.0:5000/detectprints', data={'image': my_string})
-
 assert(r.status_code==200)
