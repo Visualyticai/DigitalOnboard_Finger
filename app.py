@@ -1,4 +1,4 @@
-from test import predict
+from main import predict
 from flask import Flask, Response, jsonify, request
 
 app = Flask(__name__)
@@ -13,7 +13,6 @@ def detect_prints():
     if (temp):
         return "", 200
 
-    return "", 403
 
 
 if __name__ == '__main__':
