@@ -22,6 +22,3 @@ class AIModelFingerRealFake:
         print("[INFO] Prediction Metrics, ", prediction) if loglevel else print("")
         prediction = np.argmax(prediction)
         return prediction_map[prediction], prediction
-
-# img = cv2.imread("sample_print.jpg")
-# print(AIModelFingerRealFake().get_prediction(img, loglevel=True))
