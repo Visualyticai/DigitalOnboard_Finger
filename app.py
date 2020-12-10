@@ -1,4 +1,4 @@
-from main import predict
+import api
 from flask import Flask, Response, jsonify, request
 
 app = Flask(__name__)
@@ -8,11 +8,12 @@ app = Flask(__name__)
 def detect_prints():
     frame = request.form["image"]
 
-    temp = predict(frame)
+    img = api._base64_to_image(frame)
+    temp = api.predict(img)
 
-    if (temp):
-        return "", 200
 
+    if (temp =="Real"):
+        return "",200
 
 
 if __name__ == '__main__':
