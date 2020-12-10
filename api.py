@@ -21,6 +21,6 @@ def predict(img):
 
     fingerprint, base_string = finger.get_print(img)
     prediction_class, prediction_index = finger.get_prediction(img, loglevel=True)
-    return prediction_class
+    return prediction_index
 
     
