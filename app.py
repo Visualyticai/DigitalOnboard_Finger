@@ -9,11 +9,13 @@ def detect_prints():
     frame = request.form["image"]
 
     img = api._base64_to_image(frame)
-    temp = api.predict(img)
+    prediction = api.predict(img)
 
 
-    if (temp =="Real"):
+    if prediction:
         return "",200
+    else:
+        return "",403
 
 
 if __name__ == '__main__':
