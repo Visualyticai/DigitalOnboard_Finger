@@ -5,6 +5,7 @@ import io
 import numpy as np
 from PIL import Image
 
+finger = Finger()
 
 def _base64_to_image(base_string):
     base_string = base64.b64decode(base_string)
@@ -17,18 +18,9 @@ def _base64_to_image(base_string):
     return base_string
 
 def predict(img):
-    finger = Finger()
-    img = _base64_to_image(img)
-    
 
-
-    """Testing Finger image to Finger print conversion"""
     fingerprint, base_string = finger.get_print(img)
-
-
-    """Testing Finger Print Prediction"""
     prediction_class, prediction_index = finger.get_prediction(img, loglevel=True)
- 
-    if prediction_class == "Real":
-        return True
-    return False
+    return prediction_index
+
+    
